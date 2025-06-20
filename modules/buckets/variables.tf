@@ -1,10 +1,4 @@
 variable "project_id" {}
-variable "region" { default = "us-central1" }
-variable "zone" { default = "us-central1-a" }
-variable "cluster_name" { default = "gke-cluster" }
-variable "db_instance_name" { default = "postgres-db" }
-variable "vm_name" { default = "jenkins-vm" }
-
 variable "buckets" {
   type = map(object({
     storage_class               = string
@@ -23,22 +17,5 @@ variable "buckets" {
       response_header = list(string)
       max_age_seconds = number
     }))
-  }))
-}
-
-variable "topic_names" {
-  type = list(string)
-}
-
-variable "push_subscriptions" {
-  type = list(string)
-}
-
-variable "pull_subscriptions" {
-  type = map(object({
-    name                        = string
-    topic                       = string
-    ack_deadline_seconds       = number
-    message_retention_duration = string
   }))
 }
