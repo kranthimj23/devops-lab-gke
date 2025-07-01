@@ -1,7 +1,7 @@
 project_id   = "devops-ai-labs-1"
-region       = "<<region>>"
-zone       = "<<zone>>"
-cluster_name = "<<cluster_name>>"
+region       = "asia-south1"
+zone       = "asia-south1-a"
+cluster_name = "demo-gke-cluster"
 db_instance_name = "demo-postgres-db"
 vm_name = "demo-jenkins-vm"
 topic_names = [
@@ -14,7 +14,7 @@ push_subscriptions = [
 buckets = {
 project-dev-bucket-1  = {
 
-        storage_class               = "<<storage_class>> "
+        storage_class               = "STANDARD"
 
         force_destroy               = true
 
@@ -66,7 +66,7 @@ project-dev-bucket-1  = {
 
 project-dev-bucket-2  = {
 
-        storage_class               = "<<storage_class>> "
+        storage_class               = "NEARLINE"
 
         force_destroy               = false
 
@@ -118,7 +118,7 @@ project-dev-bucket-2  = {
 
 project-dev-bucket-3  = {
 
-        storage_class               = "<<storage_class>> "
+        storage_class               = "STANDARD"
 
         force_destroy               = true
 
@@ -170,7 +170,7 @@ project-dev-bucket-3  = {
 
 project-dev-bucket-4  = {
 
-        storage_class               = "<<storage_class>> "
+        storage_class               = "ARCHIVE"
 
         force_destroy               = true
 
@@ -222,7 +222,7 @@ project-dev-bucket-4  = {
 
 project-dev-bucket-5  = {
 
-        storage_class               = "<<storage_class>> "
+        storage_class               = "COLDLINE"
 
         force_destroy               = false
 
@@ -274,7 +274,7 @@ project-dev-bucket-5  = {
 
 project-dev-bucket-6  = {
 
-        storage_class               = "<<storage_class>> "
+        storage_class               = "STANDARD"
 
         force_destroy               = true
 
@@ -326,7 +326,7 @@ project-dev-bucket-6  = {
 
 project-dev-bucket-7  = {
 
-        storage_class               = "<<storage_class>> "
+        storage_class               = "STANDARD"
 
         force_destroy               = true
 
@@ -378,7 +378,7 @@ project-dev-bucket-7  = {
 
 project-dev-bucket-8  = {
 
-        storage_class               = "<<storage_class>> "
+        storage_class               = "STANDARD"
 
         force_destroy               = true
 
@@ -430,7 +430,7 @@ project-dev-bucket-8  = {
 
 project-dev-bucket-9  = {
 
-        storage_class               = "<<storage_class>> "
+        storage_class               = "NEARLINE"
 
         force_destroy               = false
 
@@ -482,7 +482,7 @@ project-dev-bucket-9  = {
 
 project-dev-bucket-10  = {
 
-        storage_class               = "<<storage_class>> "
+        storage_class               = "COLDLINE"
 
         force_destroy               = false
 
@@ -534,7 +534,7 @@ project-dev-bucket-10  = {
 
 project-dev-bucket-11  = {
 
-        storage_class               = "<<storage_class>> "
+        storage_class               = "COLDLINE"
 
         force_destroy               = false
 
@@ -637,6 +637,18 @@ pull-sub-9 = {
 pull-sub-10 = {
 
     name                        = "pull-sub-10"
+
+    topic                       = "topic-10"
+
+    ack_deadline_seconds       = "60"
+
+    message_retention_duration = "3600s"
+
+  },
+
+pull-sub-12 = {
+
+    name                        = "pull-sub-12"
 
     topic                       = "topic-10"
 
