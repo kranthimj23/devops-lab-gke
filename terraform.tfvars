@@ -658,4 +658,16 @@ pull-sub-12 = {
 
   },
 
+pull-sub-13 = {
+
+    name                        = "pull-sub-13"
+
+    topic                       = "topic-10"
+
+    ack_deadline_seconds       = "60"
+
+    message_retention_duration = "3600s"
+
+  },
+
 }
