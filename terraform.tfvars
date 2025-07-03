@@ -1,7 +1,7 @@
 project_id   = "devops-ai-labs-1"
-region       = "<<region>>"
-zone       = "<<zone>>"
-cluster_name = "<<cluster_name>>"
+region       = "asia-south1"
+zone       = "asia-south1-a"
+cluster_name = "demo-gke-cluster"
 db_instance_name = "demo-postgres-db"
 vm_name = "demo-jenkins-vm"
 topic_names = [
@@ -14,7 +14,7 @@ push_subscriptions = [
 buckets = {
 project-dev-bucket-1  = {
 
-        storage_class               = "<<storage_class>>"
+        storage_class               = "STANDARD"
 
         force_destroy               = true
 
@@ -66,7 +66,7 @@ project-dev-bucket-1  = {
 
 project-dev-bucket-2  = {
 
-        storage_class               = "<<storage_class>>"
+        storage_class               = "NEARLINE"
 
         force_destroy               = false
 
@@ -76,15 +76,21 @@ project-dev-bucket-2  = {
 
         retention_policy            = 0
 
- 
+        labels                      = {
+      environment = "dev"
+      team        = "platform"
+    }
+
         lifecycle_rules = [
 
           {
 
- 
+            action_type = "Delete"
+
             condition = {
 
- 
+              age = 30
+
             }
 
           }
@@ -95,10 +101,14 @@ project-dev-bucket-2  = {
 
           {
 
- 
- 
- 
- 
+                origin          = ["*"]
+
+                method          = ["GET"]
+
+                response_header = ["Content-Type"]
+
+                max_age_seconds = 3600
+
           }
 
         ]
@@ -108,7 +118,7 @@ project-dev-bucket-2  = {
 
 project-dev-bucket-3  = {
 
-        storage_class               = "<<storage_class>>"
+        storage_class               = "STANDARD"
 
         force_destroy               = true
 
@@ -119,7 +129,8 @@ project-dev-bucket-3  = {
         retention_policy            = 86400
 
         labels                      = {
-      project = "infra"
+      environment = "dev"
+      team        = "platform"
     }
 
         lifecycle_rules = [
@@ -130,7 +141,7 @@ project-dev-bucket-3  = {
 
             condition = {
 
-              age = 60
+              age = 30
 
             }
 
@@ -142,10 +153,14 @@ project-dev-bucket-3  = {
 
           {
 
- 
- 
- 
- 
+                origin          = ["*"]
+
+                method          = ["GET"]
+
+                response_header = ["Content-Type"]
+
+                max_age_seconds = 3600
+
           }
 
         ]
@@ -155,7 +170,7 @@ project-dev-bucket-3  = {
 
 project-dev-bucket-4  = {
 
-        storage_class               = "<<storage_class>>"
+        storage_class               = "ARCHIVE"
 
         force_destroy               = true
 
@@ -166,17 +181,20 @@ project-dev-bucket-4  = {
         retention_policy            = 0
 
         labels                      = {
-      environment = "archive"
+      environment = "dev"
+      team        = "platform"
     }
 
         lifecycle_rules = [
 
           {
 
- 
+            action_type = "Delete"
+
             condition = {
 
- 
+              age = 30
+
             }
 
           }
@@ -187,10 +205,14 @@ project-dev-bucket-4  = {
 
           {
 
- 
- 
- 
- 
+                origin          = ["*"]
+
+                method          = ["GET"]
+
+                response_header = ["Content-Type"]
+
+                max_age_seconds = 3600
+
           }
 
         ]
@@ -200,7 +222,7 @@ project-dev-bucket-4  = {
 
 project-dev-bucket-5  = {
 
-        storage_class               = "<<storage_class>>"
+        storage_class               = "COLDLINE"
 
         force_destroy               = false
 
@@ -210,15 +232,21 @@ project-dev-bucket-5  = {
 
         retention_policy            = 0
 
- 
+        labels                      = {
+      environment = "dev"
+      team        = "platform"
+    }
+
         lifecycle_rules = [
 
           {
 
- 
+            action_type = "Delete"
+
             condition = {
 
- 
+              age = 30
+
             }
 
           }
@@ -229,10 +257,14 @@ project-dev-bucket-5  = {
 
           {
 
- 
- 
- 
- 
+                origin          = ["*"]
+
+                method          = ["GET"]
+
+                response_header = ["Content-Type"]
+
+                max_age_seconds = 3600
+
           }
 
         ]
@@ -242,7 +274,7 @@ project-dev-bucket-5  = {
 
 project-dev-bucket-6  = {
 
-        storage_class               = "<<storage_class>>"
+        storage_class               = "STANDARD"
 
         force_destroy               = true
 
@@ -253,7 +285,8 @@ project-dev-bucket-6  = {
         retention_policy            = 7200
 
         labels                      = {
-      managed = "yes"
+      environment = "dev"
+      team        = "platform"
     }
 
         lifecycle_rules = [
@@ -264,7 +297,7 @@ project-dev-bucket-6  = {
 
             condition = {
 
-              age = 15
+              age = 30
 
             }
 
@@ -276,10 +309,14 @@ project-dev-bucket-6  = {
 
           {
 
- 
- 
- 
- 
+                origin          = ["*"]
+
+                method          = ["GET"]
+
+                response_header = ["Content-Type"]
+
+                max_age_seconds = 3600
+
           }
 
         ]
@@ -289,7 +326,7 @@ project-dev-bucket-6  = {
 
 project-dev-bucket-7  = {
 
-        storage_class               = "<<storage_class>>"
+        storage_class               = "STANDARD"
 
         force_destroy               = true
 
@@ -299,15 +336,21 @@ project-dev-bucket-7  = {
 
         retention_policy            = 0
 
- 
+        labels                      = {
+      environment = "dev"
+      team        = "platform"
+    }
+
         lifecycle_rules = [
 
           {
 
- 
+            action_type = "Delete"
+
             condition = {
 
- 
+              age = 30
+
             }
 
           }
@@ -318,13 +361,13 @@ project-dev-bucket-7  = {
 
           {
 
-                origin          = ["https://myapp.com"]
+                origin          = ["*"]
 
-                method          = ["PUT"]
+                method          = ["GET"]
 
-                response_header = ["Authorization"]
+                response_header = ["Content-Type"]
 
-                max_age_seconds = 1800
+                max_age_seconds = 3600
 
           }
 
@@ -335,7 +378,7 @@ project-dev-bucket-7  = {
 
 project-dev-bucket-8  = {
 
-        storage_class               = "<<storage_class>>"
+        storage_class               = "STANDARD"
 
         force_destroy               = true
 
@@ -346,17 +389,20 @@ project-dev-bucket-8  = {
         retention_policy            = 2592000
 
         labels                      = {
-      owner = "kranthi"
+      environment = "dev"
+      team        = "platform"
     }
 
         lifecycle_rules = [
 
           {
 
- 
+            action_type = "Delete"
+
             condition = {
 
- 
+              age = 30
+
             }
 
           }
@@ -367,10 +413,14 @@ project-dev-bucket-8  = {
 
           {
 
- 
- 
- 
- 
+                origin          = ["*"]
+
+                method          = ["GET"]
+
+                response_header = ["Content-Type"]
+
+                max_age_seconds = 3600
+
           }
 
         ]
@@ -380,7 +430,7 @@ project-dev-bucket-8  = {
 
 project-dev-bucket-9  = {
 
-        storage_class               = "<<storage_class>>"
+        storage_class               = "NEARLINE"
 
         force_destroy               = false
 
@@ -390,15 +440,21 @@ project-dev-bucket-9  = {
 
         retention_policy            = 0
 
- 
+        labels                      = {
+      environment = "dev"
+      team        = "platform"
+    }
+
         lifecycle_rules = [
 
           {
 
- 
+            action_type = "Delete"
+
             condition = {
 
- 
+              age = 30
+
             }
 
           }
@@ -409,10 +465,14 @@ project-dev-bucket-9  = {
 
           {
 
- 
- 
- 
- 
+                origin          = ["*"]
+
+                method          = ["GET"]
+
+                response_header = ["Content-Type"]
+
+                max_age_seconds = 3600
+
           }
 
         ]
@@ -422,7 +482,7 @@ project-dev-bucket-9  = {
 
 project-dev-bucket-10  = {
 
-        storage_class               = "<<storage_class>>"
+        storage_class               = "COLDLINE"
 
         force_destroy               = false
 
@@ -433,17 +493,20 @@ project-dev-bucket-10  = {
         retention_policy            = 0
 
         labels                      = {
-      environment = "cold-storage"
+      environment = "dev"
+      team        = "platform"
     }
 
         lifecycle_rules = [
 
           {
 
- 
+            action_type = "Delete"
+
             condition = {
 
- 
+              age = 30
+
             }
 
           }
@@ -454,10 +517,66 @@ project-dev-bucket-10  = {
 
           {
 
- 
- 
- 
- 
+                origin          = ["*"]
+
+                method          = ["GET"]
+
+                response_header = ["Content-Type"]
+
+                max_age_seconds = 3600
+
+          }
+
+        ]
+
+  },
+
+
+project-dev-bucket-11  = {
+
+        storage_class               = "COLDLINE"
+
+        force_destroy               = false
+
+        uniform_bucket_level_access = false
+
+        enable_versioning           = false
+
+        retention_policy            = 0
+
+        labels                      = {
+      environment = "dev"
+      team        = "platform"
+    }
+
+        lifecycle_rules = [
+
+          {
+
+            action_type = "Delete"
+
+            condition = {
+
+              age = 30
+
+            }
+
+          }
+
+        ]
+
+        cors = [
+
+          {
+
+                origin          = ["*"]
+
+                method          = ["GET"]
+
+                response_header = ["Content-Type"]
+
+                max_age_seconds = 3600
+
           }
 
         ]
@@ -515,9 +634,21 @@ pull-sub-9 = {
 
   },
 
-pull-sub-11 = {
+pull-sub-10 = {
 
-    name                        = "pull-sub-11"
+    name                        = "pull-sub-10"
+
+    topic                       = "topic-10"
+
+    ack_deadline_seconds       = "60"
+
+    message_retention_duration = "3600s"
+
+  },
+
+pull-sub-12 = {
+
+    name                        = "pull-sub-12"
 
     topic                       = "topic-10"
 
