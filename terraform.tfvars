@@ -12,7 +12,7 @@ push_subscriptions = [
   "sub-1", "sub-2", "sub-3", "sub-4", "sub-5"
 ]
 buckets = {
-project-dev-bucket-1  = {
+project-sit-bucket-1  = {
 
         storage_class               = "<<storage_class>>"
 
@@ -64,7 +64,7 @@ project-dev-bucket-1  = {
   },
 
 
-project-dev-bucket-2  = {
+project-sit-bucket-2  = {
 
         storage_class               = "<<storage_class>>"
 
@@ -106,7 +106,7 @@ project-dev-bucket-2  = {
   },
 
 
-project-dev-bucket-3  = {
+project-sit-bucket-3  = {
 
         storage_class               = "<<storage_class>>"
 
@@ -153,7 +153,7 @@ project-dev-bucket-3  = {
   },
 
 
-project-dev-bucket-4  = {
+project-sit-bucket-4  = {
 
         storage_class               = "<<storage_class>>"
 
@@ -198,7 +198,7 @@ project-dev-bucket-4  = {
   },
 
 
-project-dev-bucket-5  = {
+project-sit-bucket-5  = {
 
         storage_class               = "<<storage_class>>"
 
@@ -240,7 +240,7 @@ project-dev-bucket-5  = {
   },
 
 
-project-dev-bucket-6  = {
+project-sit-bucket-6  = {
 
         storage_class               = "<<storage_class>>"
 
@@ -287,7 +287,7 @@ project-dev-bucket-6  = {
   },
 
 
-project-dev-bucket-7  = {
+project-sit-bucket-7  = {
 
         storage_class               = "<<storage_class>>"
 
@@ -333,7 +333,7 @@ project-dev-bucket-7  = {
   },
 
 
-project-dev-bucket-8  = {
+project-sit-bucket-8  = {
 
         storage_class               = "<<storage_class>>"
 
