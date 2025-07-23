@@ -1,4 +1,4 @@
-project_id   = "devops-ai-labs-1"
+project_id   = "nice-virtue-463917-m0"
 region       = "asia-south1"
 zone       = "asia-south1-a"
 cluster_name = "demo-gke-cluster"
@@ -579,30 +579,6 @@ pull-sub-9 = {
     ack_deadline_seconds       = "30"
 
     message_retention_duration = "2400s"
-
-  },
-
-pull-sub-10 = {
-
-    name                        = "pull-sub-10"
-
-    topic                       = "topic-10"
-
-    ack_deadline_seconds       = "120"
-
-    message_retention_duration = "3600s"
-
-  },
-
-pull-sub-12 = {
-
-    name                        = "pull-sub-12"
-
-    topic                       = "topic-10"
-
-    ack_deadline_seconds       = "60"
-
-    message_retention_duration = "3600s"
 
   },
 
