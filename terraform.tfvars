@@ -576,7 +576,7 @@ pull-sub-9 = {
 
     topic                       = "topic-9"
 
-    ack_deadline_seconds       = ""
+    ack_deadline_seconds       = "60"
 
     message_retention_duration = "2400s"
 
