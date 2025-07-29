@@ -564,7 +564,7 @@ pull-sub-8 = {
 
     topic                       = "topic-8"
 
-    ack_deadline_seconds       = "20"
+    ack_deadline_seconds       = "60"
 
     message_retention_duration = "1800s"
 
@@ -591,6 +591,18 @@ pull-sub-10 = {
     ack_deadline_seconds       = "60"
 
     message_retention_duration = "1200s"
+
+  },
+
+pull-sub-11 = {
+
+    name                        = "pull-sub-11"
+
+    topic                       = "topic-10"
+
+    ack_deadline_seconds       = "120"
+
+    message_retention_duration = "1800s"
 
   },
 
